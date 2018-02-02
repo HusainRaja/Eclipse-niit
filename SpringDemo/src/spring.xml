@@ -26,8 +26,8 @@
 		</property>
 	</bean>
 	<bean id="p1" class="hr.java.Point">
-		<property name="x" value="0"/>
-		<property name="y" value="0"/>
+		<property name="x" value="${point1.x}"/>
+		<property name="y" value="${point1.y}"/>
 	</bean>
 	<bean id="p2" class="hr.java.Point">
 		<property name="x" value="10"/>
@@ -42,4 +42,8 @@
 		<property name="y" value="10"/>
 	</bean>
 	<alias name="triangle" alias="triangle-alias"/>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="pointsvalues.properties"/>
+	</bean>
 </beans>
