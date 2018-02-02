@@ -1,8 +1,6 @@
 package hr.java;
 
-import org.springframework.beans.factory.InitializingBean;
-
-public class Square implements InitializingBean{
+public class Square {
 	private Point p1,p2,p3,p4;
 	
 
@@ -53,11 +51,13 @@ public class Square implements InitializingBean{
 		System.out.println("point C : ( "+getP3().getX()+" , "+getP3().getY()+" )");
 		System.out.println("point D : ( "+getP4().getX()+" , "+getP4().getY()+" )");
 	}
+public void myDestroy() {
+	System.out.println("my destroy method called");
+}
 
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		System.out.println("InitializingBean init method for Square is called");
+	
+	public void myInit() {
+		System.out.println("My init method for Square is called");
 		
 	}
 }
