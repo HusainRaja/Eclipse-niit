@@ -4,6 +4,11 @@
 <beans>
 	<bean id="triangle" class="hr.java.Triangle">
 		<property name="type" value="scalene"/>
+		<property name="p1" ref="p1"/>
+	</bean>
+	<bean id="triangle1" class="hr.java.Triangle" parent="triangle">
+		<property name="p2" ref="p2"/>
+		<property name="p3" ref="p3"/>
 	</bean>
 	<bean id="rectangle" class="hr.java.Rectangle">
 		<constructor-arg value="big"/> 

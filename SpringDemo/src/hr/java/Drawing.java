@@ -10,7 +10,7 @@ public class Drawing {
 	public static void main(String[] args) {
 		//BeanFactory factory=new XmlBeanFactory(new FileSystemResource("spring.xml"));
 		ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle-alias");
+		Triangle triangle = (Triangle) context.getBean("triangle1");
 		Rectangle rect=(Rectangle)context.getBean("rectangle");
 		Square sq=(Square)context.getBean("square");
 		NewSquare ns=(NewSquare)context.getBean("newSquare");
