@@ -1,6 +1,9 @@
 package hr.java;
 
-public class Rectangle {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Rectangle implements InitializingBean, DisposableBean{
 	private String type;
 	private int height;
 	public Rectangle(String type) {
@@ -12,5 +15,15 @@ public class Rectangle {
 	}
 	void draw() {
 		System.out.println(type+" Rectangle with height="+height);
+	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Destroy method for rectangle called");
+		
+	}
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitializingBean init method called");
+		
 	}
 }
