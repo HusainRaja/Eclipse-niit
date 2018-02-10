@@ -16,9 +16,12 @@ import niit.com.dao.ProductDAO;
 import niit.com.dao.ProductDAOImpl;
 import niit.com.dao.SupplierDAO;
 import niit.com.dao.SupplierDAOImpl;
+import niit.com.dao.UserDetailsDAO;
+import niit.com.dao.UserDetailsDAOImpl;
 import niit.com.model.Category;
 import niit.com.model.Product;
 import niit.com.model.Supplier;
+import niit.com.model.UserDetails;
 
 @Configuration
 @EnableTransactionManagement
@@ -44,6 +47,7 @@ public class DBConfig {
 		factory.addAnnotatedClass(Category.class);
 		factory.addAnnotatedClass(Supplier.class);
 		factory.addAnnotatedClass(Product.class);
+		factory.addAnnotatedClass(UserDetails.class);
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		System.out.println("SessionFactory created.");
 		return sessionFactory;
@@ -62,6 +66,11 @@ public class DBConfig {
 	@Bean(name="productDAO")
 	public ProductDAO getProductDAO() {
 		return new ProductDAOImpl();
+	}
+	
+	@Bean(name="userDetailsDAO")
+	public UserDetailsDAO getUserDetailsDAO() {
+		return new UserDetailsDAOImpl();
 	}
 	
 	@Bean(name="txManager")
