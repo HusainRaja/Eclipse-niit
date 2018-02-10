@@ -12,6 +12,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import niit.com.dao.CategoryDAO;
 import niit.com.dao.CategoryDAOImpl;
+import niit.com.dao.ProductDAO;
+import niit.com.dao.ProductDAOImpl;
 import niit.com.dao.SupplierDAO;
 import niit.com.dao.SupplierDAOImpl;
 import niit.com.model.Category;
@@ -55,6 +57,11 @@ public class DBConfig {
 	@Bean(name="supplierDAO")
 	public SupplierDAO getSupplierDAO() {
 		return new SupplierDAOImpl();
+	}
+	
+	@Bean(name="productDAO")
+	public ProductDAO getProductDAO() {
+		return new ProductDAOImpl();
 	}
 	
 	@Bean(name="txManager")
